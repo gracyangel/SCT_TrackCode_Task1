@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Navbar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Smooth transition */
+    .navbar {
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Navbar -->
+  <header id="navbar" class="navbar fixed top-0 w-full z-50 bg-transparent">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <!-- Logo -->
+      <h1 class="text-2xl font-bold text-indigo-600">MyBrand</h1>
+
+      <!-- Navigation -->
+      <nav class="hidden md:flex space-x-6">
+        <a href="#home" class="nav-link hover:text-indigo-600">Home</a>
+        <a href="#features" class="nav-link hover:text-indigo-600">Features</a>
+        <a href="#about" class="nav-link hover:text-indigo-600">About</a>
+        <a href="#contact" class="nav-link hover:text-indigo-600">Contact</a>
+      </nav>
+
+      <!-- Button -->
+      <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg md:block hidden hover:bg-indigo-700">
+        Get Started
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="h-screen flex items-center justify-center bg-gray-100">
+    <h2 class="text-4xl md:text-6xl font-bold">Welcome to <span class="text-indigo-600">MyBrand</span></h2>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="h-screen flex items-center justify-center bg-white">
+    <h2 class="text-3xl font-bold">Our Features 🚀</h2>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="h-screen flex items-center justify-center bg-gray-100">
+    <h2 class="text-3xl font-bold">About Us 📖</h2>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="h-screen flex items-center justify-center bg-white">
+    <h2 class="text-3xl font-bold">Contact 📧</h2>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6">
+    <p>&copy; 2025 MyBrand. All rights reserved.</p>
+  </footer>
+
+  <!-- Script for scroll effect -->
+  <script>
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add("bg-white", "shadow-md");
+        navbar.classList.remove("bg-transparent");
+      } else {
+        navbar.classList.add("bg-transparent");
+        navbar.classList.remove("bg-white", "shadow-md");
+      }
+    });
+  </script>
+</body>
+</html>
